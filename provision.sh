@@ -58,13 +58,18 @@ sudo pacman -S --noconfirm xorg-server lxde
 sudo pacman -S --noconfirm ttf-liberation
 sudo systemctl enable lxdm
 sudo systemctl start lxdm
+sudo pacman -S --noconfirm archlinux-wallpaper
 
 # ===============================
 # GUI: VIRTUALBOX-GUEST-ADDITION
 # ===============================
 DIV "GUI: VIRTUALBOX-GUEST-ADDITION"
+sudo pacman -Rns --noconfirm virtualbox-guest-utils
 sudo pacman -Rns --noconfirm virtualbox-guest-utils-nox
-sudo pacman -S --noconfirm virtualbox-guest-utils
+sudo pacman -Rns --noconfirm virtualbox-guest-modules-arch
+sudo pacman -Rns --noconfirm virtualbox-guest-dkms
+sudo pacman -S --noconfirm linux-kernels
+sudo pacman -S --noconfirm virtualbox-guest-iso
 
 # =============
 # GUI: BROWSER
